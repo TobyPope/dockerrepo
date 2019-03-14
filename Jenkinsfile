@@ -14,13 +14,24 @@ node {
         app = docker.build("tobypope/dockerapp")
     }
 
-    stage('Push image') {
-        /* Finally, we'll push the image with two tags:
-         * First, the incremental build number from Jenkins
-         * Second, the 'latest' tag.
-         * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+    stage('Push image to Docker Repo') {
+        /* 
+         * Push build to docker repo
+	 * Why you may ask?
+	 * Because when amazon takes over, I will still be able to access my other repo
+ 	*/
+          
+            docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
             app.push("latest")
         }
+
+    stage('Push image to Amazon Repo') {
+	/*
+	 * Push build to amazon repo
+	*/
+
+ 	   docker.withRegistry('https://009328848241.dkr.ecr.eu-west-2.amazonaws.com/tp-docker-repo', 'amazon-repo-credentials') {
+           app.push("latest") 
+         }
     }
 }
