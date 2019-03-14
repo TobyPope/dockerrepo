@@ -30,7 +30,7 @@ node {
 	 * Push build to amazon repo
 	*/
 
- 	   docker.withRegistry('https://009328848241.dkr.ecr.eu-west-2.amazonaws.com/tp-docker-repo', 'ecr.eu-west-2.amazon-repo-credentials') {
+ 	   docker.withRegistry('https://009328848241.dkr.ecr.eu-west-2.amazonaws.com/tp-docker-repo', 'ecr:eu-west-2:amazon-repo-credentials') {
            app.push("latest") 
            }
 	}
