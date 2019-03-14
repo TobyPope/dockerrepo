@@ -32,6 +32,7 @@ node {
 
  	   docker.withRegistry('https://009328848241.dkr.ecr.eu-west-2.amazonaws.com/tp-docker-repo', 'amazon-repo-credentials') {
            app.push("latest") 
-         }
+           }
+	}
     }
 }
