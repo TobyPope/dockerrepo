@@ -5,4 +5,4 @@ FROM httpd:2.4
 COPY ./public-html/ /usr/local/apache2/htdocs/
 
 # Expose port for http connections
-EXPOSE 8080
+EXPOSE 80
