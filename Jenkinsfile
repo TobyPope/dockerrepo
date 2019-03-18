@@ -30,10 +30,10 @@ node {
 	 * Push build to amazon repo
 	*/
 	   
-	   sh 'aws ecr get-login --no-include-email --region eu-west-2'
-	   sh 'docker build -t tp-docker-repo .'
-	   sh 'docker tag tp-docker-repo:latest 009328848241.dkr.ecr.eu-west-2.amazonaws.com/tp-docker-repo:latest'
- 	   sh 'docker push 009328848241.dkr.ecr.eu-west-2.amazonaws.com/tp-docker-repo:latest'
-	}
+	    docker.withRegistry('009328848241.dkr.ecr.eu-west-2.amazonaws.com', 'ecr:eu-west-2:aws-credentials') {
+            app.push("latest")
+        }
+	   
+	  	}
     }
 }
