@@ -2,3 +2,6 @@
 terraform-configurations/.terraform
 terraform-configurations/*.tfstate*
 terraform-configurations/ecs-cluster/.terraform/
+./.terraform/plugins/linux_amd64/terraform-provider-aws_v2.8.0_x4
+./.terraform/plugins/linux_amd64/terraform-provider-template_v2.1.2_x4
+./ecs-cluster/.terraform/plugins/linux_amd64/terraform-provider-aws_v2.8.0_x4
