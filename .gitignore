@@ -1,4 +1,0 @@
-#Ignore terraform states
-.terraform-configurations/.terraform
-.terraform-configurations/*.tfstate*
-.terraform-configurations/ecs-cluster/.terraform/
