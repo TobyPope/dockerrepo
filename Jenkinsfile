@@ -40,20 +40,16 @@ node {
       }
    
     stage('Plan Terraform deployment') {
-            steps {
-		dir(terraform-configuration){
-                	sh 'terraform init -input=false'
-                	sh "terraform plan --var-file=./terraform-configurations/input.tfvars"
-            		}
-		}
-        }
+	dir(terraform-configuration){
+                sh "terraform init"
+                sh "terraform plan"
+            	}
+    }
 
     stage('Apply Terraform') {
-            steps {
-		dir(terraform-configuration){
-                	sh "terraform apply -input=false"
-            		}
-		}
-        }
+	dir(terraform-configuration){
+                sh "terraform apply -input=false"
+            	}
+    }
     
 }
