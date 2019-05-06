@@ -36,16 +36,10 @@ node {
             }
 	   
       }
-   
-    stage('Plan Terraform deployment') {
-	dir(terraform-configuration){
-                sh "terraform plan"
-            	}
-    }
 
     stage('Apply Terraform') {
-	dir(terraform-configuration){
-                sh "terraform apply -input=false"
+	dir(/home/tpope/webappdocker/){
+                sh './build.sh'
             	}
     }
     
