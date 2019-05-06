@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /home/tpope/webappdocker/terraform-configurations
-terraform apply
+terraform apply -auto-approve
