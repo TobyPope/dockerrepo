@@ -38,7 +38,7 @@ node {
       }
 
     stage('Apply Terraform') {
-	dir(/home/tpope/webappdocker/){
+	dir('/home/tpope/webappdocker/'){
                 sh './build.sh'
             	}
     }
