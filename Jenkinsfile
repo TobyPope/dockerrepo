@@ -38,8 +38,9 @@ node {
       }
 
     stage('Apply Terraform') {
-    	sh 'sudo ./build.sh'
-            	
+    	withCredentials([[$class: 'UsernamePasswordMultiBinding', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+        sh 'sudo ./build.sh'
+    }          	
     }
     
 }
