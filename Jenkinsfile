@@ -37,9 +37,9 @@ node {
 	   
       }
 
-    /*stage('Apply Terraform') {
-    	sh './build.sh'
+    stage('Apply Terraform') {
+    	sh 'sudo ./build.sh'
             	
-    }*/
+    }
     
 }
